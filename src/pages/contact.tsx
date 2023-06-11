@@ -8,7 +8,7 @@ function Contact({}: Props) {
   return (
     <MainLayout>
       <ContentLayout title="Contact | CM Academy">
-        <h1 className=" text-center mt-4">Contact at: contact@cmacademy.in</h1>
+        <h1 className=" text-center mt-4">Write us at: contact@cmacademy.in</h1>
       </ContentLayout>
     </MainLayout>
   );
