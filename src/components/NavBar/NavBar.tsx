@@ -11,7 +11,7 @@ const abrilFatface = Abril_Fatface({
 
 function CustomButton({ text }: { text: string }) {
   return (
-    <button className=" border-2 border-black py-2 px-4 rounded-lg text-black bg-transparent text-xs font-semibold hover:bg-rgba(250, 248, 248, 0.608) ">
+    <button className="border-2 border-black py-1 md:py-2 px-2 md:px-4 rounded-lg text-black bg-transparent text-[10px] md:text-sm font-semibold hover:bg-gray-200 transition duration-300">
       {text}
     </button>
   );
@@ -23,11 +23,13 @@ function NavBar({}: Props) {
   return (
     <header>
       <div className="flex items-center justify-center py-4">
-        <h1 className={`${abrilFatface.className} tracking-wide text-5xl`}>
+        <h1
+          className={`${abrilFatface.className} tracking-wide text-xl md:text-5xl`}
+        >
           CM Academy
         </h1>
       </div>
-      <nav className=" border-b-2 border-black flex items-center justify-center gap-1 md:gap-20 pb-2">
+      <nav className="border-b-2 border-black flex items-center justify-center gap-4 md:gap-20 pb-2">
         <Link href="/">
           <CustomButton text="Home" />
         </Link>
