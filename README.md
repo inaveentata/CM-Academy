@@ -15,5 +15,5 @@ sections.
 
 Like Minded people can join our team to work towards our mission.
 
-You can follow our youtube channel
+You can follow our youtube channel @
 [Career Matters Academy](https://youtube.com/@Career_Matters_Academy)
