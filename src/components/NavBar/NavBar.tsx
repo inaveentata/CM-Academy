@@ -31,13 +31,13 @@ function NavBar({}: Props) {
       </div>
       <nav className="border-b-2 border-black flex items-center justify-center gap-4 md:gap-20 pb-2">
         <Link href="/">
-          <CustomButton text="Home" />
+          <CustomButton text="Jobs" />
         </Link>
-        <Link href="/about">
-          <CustomButton text="About" />
+        <Link href="/admissions">
+          <CustomButton text="Admissions" />
         </Link>
-        <Link href="/contact">
-          <CustomButton text="Contact" />
+        <Link href="/sholarships">
+          <CustomButton text="Sholarships" />
         </Link>
       </nav>
     </header>
