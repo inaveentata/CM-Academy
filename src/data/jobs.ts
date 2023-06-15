@@ -26,6 +26,13 @@ export const jobs:JobProps[] = [
         applyLink:'',
         notificationLink:''
     },
-    
+    {
+        id:uuidv4(),
+        organisation:'BHEL',
+        postName:'Electrical Engineer',
+        lastDate:'23/06',
+        applyLink:'www.profbharat.in',
+        notificationLink:'https://drive.google.com/file/d/1S3hamzmivZFkqbuqM6553zUmjardsznO/view?usp=share_link'
+    },
 
 ]
