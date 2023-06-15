@@ -7,8 +7,8 @@ type Props = {};
 const Sholarships = (props: Props) => {
   return (
     <MainLayout>
-      <ContentLayout title="Sholarships | CM Academy">
-        <div>Sholarships</div>
+      <ContentLayout title="Scholarships | CM Academy">
+        <div>Scholarships page under construction</div>
       </ContentLayout>
     </MainLayout>
   );

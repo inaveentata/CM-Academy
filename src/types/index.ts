@@ -1,10 +1,10 @@
-export type NotificatioProps = {
+export type GenericProps = {
     id: string;
-    issueDate: string;
     organisation: string;
-    postName: string;
-    appointmentMethod: string;
     lastDate: string;
     applyLink: string;
     notificationLink:string
   };
+export type JobProps = GenericProps &{postName:string}
+  export type AdmissionProps= GenericProps & {course:string}
+  export type ScholarshipProps = GenericProps & {course:string}

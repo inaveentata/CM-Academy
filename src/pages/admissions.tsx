@@ -7,7 +7,7 @@ const Admissions = (props: Props) => {
   return (
     <MainLayout>
       <ContentLayout title="Admissions | CM Academy">
-        <div>Admissions</div>
+        <div>Admissions page under construction</div>
       </ContentLayout>
     </MainLayout>
   );
