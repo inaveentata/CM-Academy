@@ -36,7 +36,7 @@ function NavBar({}: Props) {
         <Link href="/admissions">
           <CustomButton text="Admissions" />
         </Link>
-        <Link href="/sholarships">
+        <Link href="/scholarships">
           <CustomButton text="Sholarships" />
         </Link>
       </nav>
