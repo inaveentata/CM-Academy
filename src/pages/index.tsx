@@ -1,16 +1,15 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import MainLayout from "@/components/Layout/MainLayout/MainLayout";
 import ContentLayout from "@/components/Layout/ContentLayout/ContentLayout";
 import RenderTable from "@/components/RenderTable/RenderTable";
-
-const inter = Inter({ subsets: ["latin"] });
+import { jobs } from "@/data/jobs";
+import { updateKeys } from "@/utils";
 
 function HomePage() {
+  const jobsData = updateKeys(jobs);
   return (
     <MainLayout>
       <ContentLayout title="Home | CM Academy">
-        <RenderTable />
+        <RenderTable opportunities={jobsData} areTheseJobs={true} />
       </ContentLayout>
     </MainLayout>
   );

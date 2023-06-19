@@ -1,94 +1,41 @@
 import React from "react";
-import { Table, Text, Center } from "@mantine/core";
-import { jobs } from "@/data/jobs";
-import { JobProps } from "@/types";
+import { Table, Text } from "@mantine/core";
 import Link from "next/link";
+import MobileTable from "../MobileTable/MobileTable";
 
-const MobileTable = ({ job }: { job: JobProps }) => {
-  const { id, organisation, postName, lastDate, applyLink, notificationLink } =
-    job;
-
-  return (
-    <Table
-      striped
-      highlightOnHover
-      withBorder
-      withColumnBorders
-      sx={{ marginBottom: "1rem" }}
-    >
-      <thead>
-        <tr>
-          <th colSpan={2}>
-            <Text size="lg" align="center">
-              {organisation}
-            </Text>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <React.Fragment key={id}>
-          <tr>
-            <th>
-              <Text>Post Name</Text>
-            </th>
-            <td>
-              <Text>{postName}</Text>
-            </td>
-          </tr>
-          <tr>
-            <th>
-              <Text>Last Date</Text>
-            </th>
-            <td>
-              <Text>{lastDate}</Text>
-            </td>
-          </tr>
-          <tr>
-            <th>
-              <Text>Apply Link</Text>
-            </th>
-            <td>
-              <Link href={applyLink} rel="noopener noreferrer" target="_blank">
-                <Text>Apply</Text>
-              </Link>
-            </td>
-          </tr>
-          <tr>
-            <th>
-              <Text>Notification</Text>
-            </th>
-            <td>
-              <Link
-                href={notificationLink}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <Text>Download</Text>
-              </Link>
-            </td>
-          </tr>
-        </React.Fragment>
-      </tbody>
-    </Table>
-  );
+export type OpportunityProps = {
+  id: string;
+  organisation: string;
+  title: string;
+  lastDate: string;
+  applyLink: string;
+  notificationLink: string;
 };
 
-type Props = {};
+type Props = {
+  opportunities: OpportunityProps[];
+  areTheseJobs: boolean;
+};
 
 const RenderTable = (props: Props) => {
-  const rows = jobs.map((job: JobProps) => (
-    <tr key={job.id}>
-      <td>{job.organisation}</td>
-      <td>{job.postName}</td>
-      <td>{job.lastDate}</td>
+  const { opportunities, areTheseJobs } = props;
+  const rows = opportunities.map((opportunity: OpportunityProps) => (
+    <tr key={opportunity.id}>
+      <td>{opportunity.organisation}</td>
+      <td>{opportunity.title}</td>
+      <td>{opportunity.lastDate}</td>
       <td>
-        <Link href={job.applyLink} rel="noopener noreferrer" target="_blank">
+        <Link
+          href={opportunity.applyLink}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <Text>Apply</Text>
         </Link>
       </td>
       <td>
         <Link
-          href={job.notificationLink}
+          href={opportunity.notificationLink}
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -102,8 +49,12 @@ const RenderTable = (props: Props) => {
     <>
       <div className="flex justify-center items-center p-2 md:hidden">
         <div>
-          {jobs.map((job) => (
-            <MobileTable key={job.id} job={job} />
+          {opportunities.map((opportunity) => (
+            <MobileTable
+              key={opportunity.id}
+              opportunity={opportunity}
+              areTheseJobs={areTheseJobs}
+            />
           ))}
         </div>
       </div>
@@ -112,7 +63,7 @@ const RenderTable = (props: Props) => {
           <thead>
             <tr>
               <th> Organisation</th>
-              <th>Post Name</th>
+              <th>{areTheseJobs ? "Post" : "Course"}</th>
               <th> Last Date</th>
               <th> Apply Link </th>
               <th> Notification Link</th>
