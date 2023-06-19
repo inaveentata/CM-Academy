@@ -8,7 +8,7 @@ function HomePage() {
   const jobsData = updateKeys(jobs);
   return (
     <MainLayout>
-      <ContentLayout title="Home | CM Academy">
+      <ContentLayout title="Jobs | CM Academy">
         <RenderTable opportunities={jobsData} areTheseJobs={true} />
       </ContentLayout>
     </MainLayout>
